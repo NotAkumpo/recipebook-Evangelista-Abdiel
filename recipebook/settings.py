@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'ledger',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+LOGIN_REDIRECT_URL = '/ledger/list'
+LOGOUT_REDIRECT_URL = '/accounts/login'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
